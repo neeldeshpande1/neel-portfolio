@@ -36,11 +36,11 @@ the way. Currently on the Enterprise Platform Products · Platform Reporting tea
       color: "#FF6B00",
       highlights: [
         // Add Bloomberg highlights here as your work progresses
-        "Joined the Platform Reporting team within Enterprise Platform Products",
+        "Engineering the Platform Reporting infrastructure within Bloomberg's PORT Enterprise — a bespoke portfolio risk and return analytics platform serving 800+ institutional clients with sophisticated attribution, batch reporting, ESG analytics, and AI-powered portfolio commentary across multi-asset investment workflows.",
       ],
     },
     {
-      company: "Amazon.com (Retail) / Amazon Web Services",
+      company: "Amazon.com (Retail) / Amazon Web Services (AWS)",
       role: "Software Development Engineer I / II",
       team: "Prime Tech · Retail Catalog Automation · Supply Chain Optimization (SCOT)",
       location: "New York, NY",

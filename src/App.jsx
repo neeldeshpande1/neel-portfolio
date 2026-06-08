@@ -31,27 +31,32 @@ the way. Currently on the Enterprise Platform Products · Platform Reporting tea
       team: "Enterprise Platform Products · Platform Reporting",
       location: "New York, NY",
       period: "Jun 2026 – Present",
-      logo: "B",
+      logo: "/BloombergLogo.png",
+      logoKey: "bloomberg",
       color: "#FF6B00",
       highlights: [
         // Add Bloomberg highlights here as your work progresses
-        "Engineering the Platform Reporting infrastructure within Bloomberg's PORT Enterprise — a bespoke portfolio risk and return analytics platform serving 800+ institutional clients with sophisticated attribution, batch reporting, ESG analytics, and AI-powered portfolio commentary across multi-asset investment workflows.",
+        "Joined the Platform Reporting team within Enterprise Platform Products",
       ],
     },
     {
-      company: "Amazon.com / Amazon Web Services (AWS)",
+      company: "Amazon.com (Retail) / Amazon Web Services",
       role: "Software Development Engineer I / II",
       team: "Prime Tech · Retail Catalog Automation · Supply Chain Optimization (SCOT)",
       location: "New York, NY",
       period: "Oct 2021 – May 2026",
-      logo: "A",
+      logo: "/AmazonLogo.png",
+      logoKey: "amazon",
       color: "#FF9900",
       highlights: [
-        "Designed and owned an Asynchronous Preview Orchestration Platform using AWS Step Functions and ECS — increased throughput 20× and slashed compute cost by 95% with non-blocking execution and automatic retries.",
-        "Built a low-latency Spark-based pipeline for Item Relationship Extraction & Publishing, inferring and publishing product attribute relationships for millions of ASINs. Reduced latency 45%, expanded coverage 10×, all within sub-minute SLAs.",
-        "Led modernization of Amazon's core forecasting infrastructure (order quantity for retail inventory) — migrated to modular microservices on ECS/Lambda with zero-downtime cutover and 30% runtime improvement, freeing millions in legacy hardware.",
-        "Built and integrated LLM-powered developer tools (Amazon Q, Cline) using Claude Opus/Sonnet and set up internal MCP servers to automate reviews and accelerate development workflows.",
-        "Mentored 4+ early-career engineers; handled high-priority on-call SEV2 incidents with swift mitigation and thorough root cause analysis.",
+        "Designed, developed and owned an Asynchronous Preview Orchestration Platform using AWS Step Functions and ECS, increasing throughput 20× and reducing compute cost 95%. Improved reliability and scalability with non-blocking execution and automatic retries.",
+        "Built a low-latency Spark-based data processing pipeline for Item Relationship Extraction & Publishing, automatically inferring and publishing product attribute relationships for millions of ASINs. Optimized data flow, reducing latency by 45% and expanding data coverage 10× while maintaining sub-minute SLAs for data ingestion and relationship publication.",
+        "Led the modernization of Amazon's core forecasting infrastructure used to calculate Order Quantity for ASINs in Amazon's Retail inventory, migrating to modular microservices on ECS/Lambda, enabling zero-downtime cutover. Enhanced the linear programming model (SPAM), improving runtime efficiency by 30% and releasing millions in legacy hardware.",
+        "Collaborated across product, design, operations, and infrastructure teams to deliver high-quality, maintainable systems with comprehensive testing and CI practices demonstrating cross-team impact.",
+        "Provided technical leadership and mentorship to 4+ early-career engineers, driving technical direction and setting team consensus.",
+        "Handled high-priority SEV2 cases as on-call, providing swift mitigation and thorough root cause analysis for complex issues.",
+        "Architected scalable distributed systems and infrastructure components for petabyte-scale data processing, demonstrating expertise in system design, data structures, algorithms and coding depth.",
+        "Built and integrated LLM-powered developer tools (Amazon Q, Cline) using underlying cutting-edge models like Claude Opus and Sonnet and set up internal MCP servers to automate reviews and accelerate software development workflows.",
       ],
     },
     {
@@ -60,12 +65,14 @@ the way. Currently on the Enterprise Platform Products · Platform Reporting tea
       team: "ML Infrastructure",
       location: "Boston, MA",
       period: "Oct 2020 – Jan 2021",
-      logo: "C",
+      logo: "/CastaluneLogo.png",
+      logoFallback: "C",
+      logoKey: "castalune",
       color: "#6C63FF",
       highlights: [
-        "Designed a large-scale parallel data simulation framework on GCP for ML models in energy and finance. Used Spark across hundreds of executors to generate >10TB of time-series data.",
-        "Implemented checkpointing and fault-tolerant orchestration, reducing reprocessing overhead by 60%.",
-        "Worked with data scientists to define schemas and validation protocols for consistent downstream ingestion.",
+        "Designed and implemented large-scale parallel data simulation and generation framework on GCP for ML models in energy and finance domains. Leveraged Spark to parallelize workloads across hundreds of executors, generating >10TB of time-series data.",
+        "Implemented checkpointing and fault-tolerant job orchestration to recover gracefully from node failures, reducing reprocessing overhead by 60%.",
+        "Worked directly with data scientists to define schemas and validation protocols for consistent downstream ingestion and analysis.",
       ],
     },
     {
@@ -74,11 +81,14 @@ the way. Currently on the Enterprise Platform Products · Platform Reporting tea
       team: "Platform Integrations",
       location: "Pune, India",
       period: "Oct 2018 – Jun 2019",
-      logo: "eQ",
+      logo: "/eQLogo.png",
+      logoFallback: "eQ",
+      logoKey: "eq",
       color: "#0EA5E9",
       highlights: [
-        "Built and optimized multi-threaded integration APIs connecting PLM, ERP, and CRM systems; reduced synchronization latency 35% via concurrency tuning and in-memory caching.",
-        "Refactored UI stack to Backbone/MarionetteJS, increasing responsiveness and maintainability by 50%.",
+        "Built and optimized multi-threaded integration APIs connecting PLM, ERP, and CRM systems, and optimized backend workflows, reducing synchronization latency by 35% through concurrency tuning and in-memory caching.",
+        "Refactored UI stack to Backbone/MarionetteJS, increasing responsiveness and maintainability by 50% with higher throughput.",
+        "Collaborated with cross-functional client teams to deliver production integrations under tight SLAs.",
       ],
     },
   ],
@@ -113,8 +123,36 @@ the way. Currently on the Enterprise Platform Products · Platform Reporting tea
 };
 
 // ============================================================
-// HOOKS
+// INLINE BRAND LOGOS — hand-coded SVGs, zero external deps
 // ============================================================
+const LOGOS = {
+  bloomberg: () => (
+    <svg viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%"}}>
+      <text x="2" y="24" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="22" fill="white" letterSpacing="-0.5">BLOOMBERG</text>
+    </svg>
+  ),
+  amazon: () => (
+    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%"}}>
+      <text x="2" y="22" fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="20" fill="white">amazon</text>
+      <path d="M8 32 Q40 42 75 32 Q80 30 85 32" stroke="#FF9900" strokeWidth="3" fill="none" strokeLinecap="round"/>
+      <polygon points="83,28 88,33 83,36" fill="#FF9900"/>
+    </svg>
+  ),
+  castalune: () => (
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%"}}>
+      <text x="50" y="68" textAnchor="middle" fontFamily="Georgia,serif" fontWeight="bold" fontSize="52" fill="#6C63FF">C</text>
+    </svg>
+  ),
+  eq: () => (
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%"}}>
+      <text x="50" y="68" textAnchor="middle" fontFamily="Arial,sans-serif" fontWeight="bold" fontSize="44" fill="#0EA5E9">eQ</text>
+    </svg>
+  ),
+};
+
+
+
+
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -389,9 +427,13 @@ function Experience() {
             <div className="timeline-item">
               <div
                 className="timeline-dot"
-                style={{ background: job.color + "22", color: job.color, borderColor: job.color + "44" }}
+                style={{ background: "rgba(255,255,255,0.04)", borderColor: job.color + "44", overflow: "hidden", padding: "4px" }}
               >
-                {job.logo}
+                <img
+                  src={job.logo}
+                  alt={job.company}
+                  style={{ width: "130%", height: "130%", objectFit: "cover", borderRadius: "50%" }}
+                />
               </div>
               <div className="timeline-card">
                 <div className="timeline-header">
